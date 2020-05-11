@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],[,function(n,o,t){"use strict";t.r(o);t(2),t(5),t(6);var c=t(0),e=t.n(c);window.$=e.a,e()("a.link-main").not('[href="#"]').not('[href="#0"]').click((function(){e()([document.documentElement,document.body]).animate({scrollTop:e()(this.hash).offset().top},1e3)}))},,,,function(n,o,t){},function(n,o,t){}],[[1,1,2]]]);
