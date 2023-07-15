@@ -27,7 +27,7 @@ Currently, I work as a consultant with [Hitechra](https://hitechra.com), where I
 **[Hitechra](https://www.hitechra.com), 2021 - Present (Self-Employed)**, as a Consultant and Co-Founder
 <p></p>
 
-When I was in Hitechra, I had the chance to work on the following clients: 
+I had the chance to work with the following clients: 
 
 <img src="https://hitechra.com/storage/media/10/y1EuYjUdekpqhWk8rueoMP1FoUDNkk-metabG9nby1zdGllc2lhLXRyYW5zcGFyYW50LTEucG5n-.png" alt="Stiesia" width="100" style="margin-right: 10px"/>
 <img src="https://hitechra.com/storage/media/11/hEQwT3LaZ33eCZ1gETRdrR9lDqpOti-metadW5haXItbG9nby1ib3JkZXJGWC0zMDB4Mjk2LnBuZw==-.png" alt="UNAIR" width="50" style="margin-right: 10px"/>
@@ -47,7 +47,7 @@ Tools: Golang, Ruby on Rails, Node.js, Python, Redis, ElasticSearch, BigQuery
 
 Tools: PHP, Laravel, Lumen, MongoDB, PostgreSQL
 
-When I was in Sevima, I had the chance to work on the following clients: 
+When I was in Sevima, I had the chance to work with the following clients: 
 
 <img src="https://hitechra.com/storage/media/10/y1EuYjUdekpqhWk8rueoMP1FoUDNkk-metabG9nby1zdGllc2lhLXRyYW5zcGFyYW50LTEucG5n-.png" alt="Stiesia" width="100" style="margin-right: 10px"/>
 <img src="https://lh3.googleusercontent.com/-2g-tfpVTHVc/AAAAAAAAAAI/AAAAAAAAAAA/abTzAqMLGXg/s88-p-k-no-ns-nd/photo.jpg" alt="Universitas Ciputra" width="50" style="margin-right: 10px"/>
@@ -60,6 +60,6 @@ Tools: PHP, Laravel, Lumen, Flutter
 
 ---
 
-**[SCOMPTEC](https://www.scomptec.com/), 2020 - 2021**, as a IT Instructor and Fullstack Developer
+**[SCOMPTEC](https://www.scomptec.com/), 2018 - 2019**, as a IT Instructor and Fullstack Developer
 
 Tools: PHP, Laravel

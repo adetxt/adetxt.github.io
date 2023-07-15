@@ -469,7 +469,7 @@
     vue "^3.3.4"
     vue-router "^4.2.4"
 
-"@vuepress/plugin-back-to-top@2.0.0-beta.66":
+"@vuepress/plugin-back-to-top@2.0.0-beta.66", "@vuepress/plugin-back-to-top@^2.0.0-beta.66":
   version "2.0.0-beta.66"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.66.tgz#7af58250a39b950bcb3b3b91e74dfd05cbba969a"
   integrity sha512-tmBe7h3uosQcAko1dmqUYjMUdIBxSE7nMbKAsHb8/GX77HWLOM5SaOKye++vPWu/1HMkZwU/iwI2njdC6fSTYw==
