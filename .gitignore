@@ -4,3 +4,9 @@ dist
 *.log
 .superpowers
 coverage
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+tailwind.config.js
+tailwind.config.d.ts
+postcss.config.js
