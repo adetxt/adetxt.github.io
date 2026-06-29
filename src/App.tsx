@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TopNav } from './components/nav/TopNav'
+import { ThemeToggle } from './components/ui/ThemeToggle'
 import { MeshGradient } from './components/motion/MeshGradient'
 import { MagneticCursor } from './components/motion/MagneticCursor'
 import { Marquee } from './components/motion/Marquee'
@@ -24,7 +24,9 @@ export default function App() {
     <main id="top" className="relative min-h-screen bg-bg">
       <MeshGradient />
       <MagneticCursor />
-      <TopNav />
+      <div className="fixed top-4 right-4 z-40">
+        <ThemeToggle />
+      </div>
       <BentoGrid>
         <HeroTile onClick={() => setOpenDetail(heroDetail)} />
         <ProjectTile project={projects[0]} className="lg:col-span-5" onClick={() => setOpenDetail(projects[0])} />
