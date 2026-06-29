@@ -61,7 +61,7 @@ export function MagneticCursor() {
       />
       <div
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-50 hidden -translate-x-1/2 -translate-y-1/2 md:block"
+        className="pointer-events-none fixed left-0 top-0 z-50 hidden -translate-x-1/2 -translate-y-1/2 mix-blend-difference md:block"
         style={{
           transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
           transition: 'width 0.25s, height 0.25s, opacity 0.25s, border-color 0.25s',
