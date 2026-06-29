@@ -1,12 +1,18 @@
 import { BentoTile } from '../bento/BentoTile'
 import { Chip } from '../ui/Chip'
 
-export function HeroTile() {
+type Props = {
+  onClick?: () => void
+}
+
+export function HeroTile({ onClick }: Props) {
   return (
     <BentoTile
       data-bento-tile
       label="About"
-      className="col-span-1 md:col-span-2 lg:col-span-7 lg:row-span-2 p-8"
+      onClick={onClick}
+      expandable
+      className="col-span-1 md:col-span-2 lg:col-span-7 lg:row-span-2 cursor-pointer p-8"
     >
       <div className="flex h-full flex-col justify-between gap-8">
         <div>

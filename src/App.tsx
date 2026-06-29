@@ -14,10 +14,11 @@ import { ContactTile } from './components/tiles/ContactTile'
 import { GitHubTile } from './components/tiles/GitHubTile'
 import { ExperienceTile } from './components/tiles/ExperienceTile'
 import { projects } from './data/projects'
+import { heroDetail } from './data/hero'
 import type { Project } from './data/projects'
 
 export default function App() {
-  const [openProject, setOpenProject] = useState<Project | null>(null)
+  const [openDetail, setOpenDetail] = useState<Project | null>(null)
 
   return (
     <main id="top" className="relative min-h-screen bg-bg">
@@ -25,16 +26,16 @@ export default function App() {
       <MagneticCursor />
       <TopNav />
       <BentoGrid>
-        <HeroTile />
-        <ProjectTile project={projects[0]} className="lg:col-span-5" onClick={() => setOpenProject(projects[0])} />
+        <HeroTile onClick={() => setOpenDetail(heroDetail)} />
+        <ProjectTile project={projects[0]} className="lg:col-span-5" onClick={() => setOpenDetail(projects[0])} />
         <TechStackTile />
         <NowBuildingTile />
-        <ProjectTile project={projects[1]} className="lg:col-span-7" onClick={() => setOpenProject(projects[1])} />
+        <ProjectTile project={projects[1]} className="lg:col-span-7" onClick={() => setOpenDetail(projects[1])} />
         <ExperienceTile />
         <GitHubTile />
         <MusicTile />
         <ContactTile />
-        <ProjectTile project={projects[2]} className="lg:col-span-4" onClick={() => setOpenProject(projects[2])} />
+        <ProjectTile project={projects[2]} className="lg:col-span-4" onClick={() => setOpenDetail(projects[2])} />
       </BentoGrid>
       <Marquee
         items={[
@@ -43,7 +44,7 @@ export default function App() {
           'Currently shipping CLI tools',
         ]}
       />
-      <TileDetail project={openProject} onClose={() => setOpenProject(null)} />
+      <TileDetail project={openDetail} onClose={() => setOpenDetail(null)} />
     </main>
   )
 }

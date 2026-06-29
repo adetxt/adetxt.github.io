@@ -1,4 +1,5 @@
 import { BentoTile } from '../bento/BentoTile'
+import { currentlyListening, currentlyReading } from '../../data/music'
 
 export function MusicTile() {
   return (
@@ -8,17 +9,17 @@ export function MusicTile() {
       </p>
       <div className="mt-4 space-y-3">
         <div className="flex items-center gap-3">
-          <div className="h-12 w-12 flex-shrink-0 rounded-md bg-gradient-to-br from-orange-400 to-pink-500" />
+          <div className={`h-12 w-12 flex-shrink-0 rounded-md bg-gradient-to-br ${currentlyListening.coverGradient}`} />
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-ink">Album title here</p>
-            <p className="truncate text-xs text-ink-muted">Artist name</p>
+            <p className="truncate text-sm font-medium text-ink">{currentlyListening.title}</p>
+            <p className="truncate text-xs text-ink-muted">{currentlyListening.artist}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <div className="h-12 w-12 flex-shrink-0 rounded-md bg-gradient-to-br from-emerald-400 to-cyan-500" />
+          <div className={`h-12 w-12 flex-shrink-0 rounded-md bg-gradient-to-br ${currentlyReading.coverGradient}`} />
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-ink">Book title here</p>
-            <p className="truncate text-xs text-ink-muted">Author</p>
+            <p className="truncate text-sm font-medium text-ink">{currentlyReading.title}</p>
+            <p className="truncate text-xs text-ink-muted">{currentlyReading.artist}</p>
           </div>
         </div>
       </div>
