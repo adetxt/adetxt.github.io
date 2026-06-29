@@ -1,6 +1,7 @@
 import { TopNav } from './components/nav/TopNav'
 import { MeshGradient } from './components/motion/MeshGradient'
 import { MagneticCursor } from './components/motion/MagneticCursor'
+import { Marquee } from './components/motion/Marquee'
 import { BentoGrid } from './components/bento/BentoGrid'
 import { HeroTile } from './components/tiles/HeroTile'
 import { ProjectTile } from './components/tiles/ProjectTile'
@@ -8,6 +9,8 @@ import { TechStackTile } from './components/tiles/TechStackTile'
 import { NowBuildingTile } from './components/tiles/NowBuildingTile'
 import { MusicTile } from './components/tiles/MusicTile'
 import { ContactTile } from './components/tiles/ContactTile'
+import { GitHubTile } from './components/tiles/GitHubTile'
+import { ExperienceTile } from './components/tiles/ExperienceTile'
 import { projects } from './data/projects'
 
 export default function App() {
@@ -22,10 +25,19 @@ export default function App() {
         <TechStackTile />
         <NowBuildingTile />
         <ProjectTile project={projects[1]} className="lg:col-span-7" />
+        <ExperienceTile />
+        <GitHubTile />
         <MusicTile />
         <ContactTile />
         <ProjectTile project={projects[2]} className="lg:col-span-4" />
       </BentoGrid>
+      <Marquee
+        items={[
+          'Available for hire',
+          'Open to interesting projects',
+          'Currently shipping CLI tools',
+        ]}
+      />
     </main>
   )
 }
