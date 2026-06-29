@@ -18,8 +18,21 @@ export function ProjectTile({ project, className = '', onClick, layoutId }: Prop
       onClick={onClick}
       layoutId={layoutId ?? `tile-${project.id}`}
     >
-      <div className={`flex h-full flex-col gap-4 bg-gradient-to-br ${project.gradient} p-6 text-white`}>
-        <div className="flex items-start justify-between">
+      <div className="relative flex h-full flex-col gap-4 p-6 text-white">
+        {project.screenshot ? (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${project.screenshot})` }}
+              aria-hidden="true"
+            />
+            <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} mix-blend-multiply opacity-80`} aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" aria-hidden="true" />
+          </>
+        ) : (
+          <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} aria-hidden="true" />
+        )}
+        <div className="relative flex items-start justify-between">
           <p className="text-xs font-semibold uppercase tracking-wider text-white/80">
             Project · {project.year}
           </p>
@@ -35,7 +48,7 @@ export function ProjectTile({ project, className = '', onClick, layoutId }: Prop
             </a>
           )}
         </div>
-        <div className="mt-auto">
+        <div className="relative mt-auto">
           <h3 className="text-2xl font-bold tracking-tight">{project.title}</h3>
           <p className="mt-1 text-sm text-white/90">{project.description}</p>
           <div className="mt-3 flex flex-wrap gap-1.5">
