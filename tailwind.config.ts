@@ -16,8 +16,8 @@ export default {
         bento: '24px',
       },
       boxShadow: {
-        tile: '0 1px 2px rgba(0,0,0,0.04)',
-        'tile-hover': '0 20px 40px rgba(0,0,0,0.08)',
+        tile: '0 1px 1px rgba(0,0,0,0.02)',
+        'tile-hover': '0 10px 30px rgba(0,0,0,0.06)',
       },
       fontFamily: {
         sans: [
