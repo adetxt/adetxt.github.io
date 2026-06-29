@@ -1,3 +1,9 @@
+import { TopNav } from './components/nav/TopNav'
+
 export default function App() {
-  return <div className="p-8 text-ink">Ade — portfolio (scaffolded)</div>
+  return (
+    <main id="top" className="min-h-screen bg-bg">
+      <TopNav />
+    </main>
+  )
 }
