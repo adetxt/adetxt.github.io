@@ -15,6 +15,10 @@ export function MagneticCursor() {
     const isTouch = window.matchMedia('(hover: none)').matches
     if (isTouch) return
     setHidden(false)
+    document.documentElement.classList.add('cursor-hidden')
+    return () => {
+      document.documentElement.classList.remove('cursor-hidden')
+    }
   }, [reduced])
 
   useEffect(() => {

@@ -32,3 +32,8 @@ body {
   outline-offset: 2px;
   border-radius: inherit;
 }
+
+.cursor-hidden,
+.cursor-hidden * {
+  cursor: none !important;
+}
