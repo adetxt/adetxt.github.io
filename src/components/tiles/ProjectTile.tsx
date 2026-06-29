@@ -5,14 +5,18 @@ import type { Project } from '../../data/projects'
 type Props = {
   project: Project
   className?: string
+  onClick?: () => void
+  layoutId?: string
 }
 
-export function ProjectTile({ project, className = '' }: Props) {
+export function ProjectTile({ project, className = '', onClick, layoutId }: Props) {
   return (
     <BentoTile
       data-bento-tile
       label={`Project: ${project.title}`}
       className={`col-span-1 lg:col-span-5 ${className}`}
+      onClick={onClick}
+      layoutId={layoutId ?? `tile-${project.id}`}
     >
       <div className={`flex h-full flex-col gap-4 bg-gradient-to-br ${project.gradient} p-6 text-white`}>
         <div className="flex items-start justify-between">

@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import { TopNav } from './components/nav/TopNav'
 import { MeshGradient } from './components/motion/MeshGradient'
 import { MagneticCursor } from './components/motion/MagneticCursor'
 import { Marquee } from './components/motion/Marquee'
 import { BentoGrid } from './components/bento/BentoGrid'
+import { TileDetail } from './components/bento/expand/TileDetail'
 import { HeroTile } from './components/tiles/HeroTile'
 import { ProjectTile } from './components/tiles/ProjectTile'
 import { TechStackTile } from './components/tiles/TechStackTile'
@@ -12,8 +14,11 @@ import { ContactTile } from './components/tiles/ContactTile'
 import { GitHubTile } from './components/tiles/GitHubTile'
 import { ExperienceTile } from './components/tiles/ExperienceTile'
 import { projects } from './data/projects'
+import type { Project } from './data/projects'
 
 export default function App() {
+  const [openProject, setOpenProject] = useState<Project | null>(null)
+
   return (
     <main id="top" className="relative min-h-screen bg-bg">
       <MeshGradient />
@@ -21,15 +26,15 @@ export default function App() {
       <TopNav />
       <BentoGrid>
         <HeroTile />
-        <ProjectTile project={projects[0]} className="lg:col-span-5" />
+        <ProjectTile project={projects[0]} className="lg:col-span-5" onClick={() => setOpenProject(projects[0])} />
         <TechStackTile />
         <NowBuildingTile />
-        <ProjectTile project={projects[1]} className="lg:col-span-7" />
+        <ProjectTile project={projects[1]} className="lg:col-span-7" onClick={() => setOpenProject(projects[1])} />
         <ExperienceTile />
         <GitHubTile />
         <MusicTile />
         <ContactTile />
-        <ProjectTile project={projects[2]} className="lg:col-span-4" />
+        <ProjectTile project={projects[2]} className="lg:col-span-4" onClick={() => setOpenProject(projects[2])} />
       </BentoGrid>
       <Marquee
         items={[
@@ -38,6 +43,7 @@ export default function App() {
           'Currently shipping CLI tools',
         ]}
       />
+      <TileDetail project={openProject} onClose={() => setOpenProject(null)} />
     </main>
   )
 }
