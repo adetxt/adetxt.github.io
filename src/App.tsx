@@ -4,6 +4,10 @@ import { MagneticCursor } from './components/motion/MagneticCursor'
 import { BentoGrid } from './components/bento/BentoGrid'
 import { HeroTile } from './components/tiles/HeroTile'
 import { ProjectTile } from './components/tiles/ProjectTile'
+import { TechStackTile } from './components/tiles/TechStackTile'
+import { NowBuildingTile } from './components/tiles/NowBuildingTile'
+import { MusicTile } from './components/tiles/MusicTile'
+import { ContactTile } from './components/tiles/ContactTile'
 import { projects } from './data/projects'
 
 export default function App() {
@@ -14,13 +18,13 @@ export default function App() {
       <TopNav />
       <BentoGrid>
         <HeroTile />
-        {projects.map((p, i) => (
-          <ProjectTile
-            key={p.id}
-            project={p}
-            className={i === 0 ? 'lg:col-span-5' : i === 1 ? 'lg:col-span-7' : 'lg:col-span-4'}
-          />
-        ))}
+        <ProjectTile project={projects[0]} className="lg:col-span-5" />
+        <TechStackTile />
+        <NowBuildingTile />
+        <ProjectTile project={projects[1]} className="lg:col-span-7" />
+        <MusicTile />
+        <ContactTile />
+        <ProjectTile project={projects[2]} className="lg:col-span-4" />
       </BentoGrid>
     </main>
   )
