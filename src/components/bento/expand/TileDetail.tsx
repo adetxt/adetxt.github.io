@@ -21,6 +21,9 @@ export function TileDetail({ project, onClose }: Props) {
     <AnimatePresence>
       {project && (
         <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="tile-detail-title"
           className="fixed inset-0 z-50 flex items-center justify-center p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -41,7 +44,7 @@ export function TileDetail({ project, onClose }: Props) {
               <p className="text-xs font-semibold uppercase tracking-wider text-white/80">
                 Project · {project.year}
               </p>
-              <h2 className="mt-2 text-3xl font-bold tracking-tight">{project.title}</h2>
+              <h2 id="tile-detail-title" className="mt-2 text-3xl font-bold tracking-tight">{project.title}</h2>
             </div>
             <div className="p-6">
               <p className="text-base text-ink">{project.longDescription}</p>
