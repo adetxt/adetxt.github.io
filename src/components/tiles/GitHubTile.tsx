@@ -1,7 +1,7 @@
 import { FiStar, FiExternalLink } from 'react-icons/fi'
 import { BentoTile } from '../bento/BentoTile'
 import { Counter } from '../ui/Counter'
-import { githubRepos, githubTotals } from '../../data/github'
+import { githubRepos, githubTotals, githubHeatmap } from '../../data/github'
 
 const LANG_DOT: Record<string, string> = {
   TypeScript: 'bg-blue-500',
@@ -15,9 +15,16 @@ const LANG_DOT: Record<string, string> = {
   'C++': 'bg-pink-500',
 }
 
+const LEVEL_COLORS = [
+  'bg-[var(--bg)]',
+  'bg-emerald-200 dark:bg-emerald-900',
+  'bg-emerald-300 dark:bg-emerald-700',
+  'bg-emerald-400 dark:bg-emerald-500',
+  'bg-emerald-500 dark:bg-emerald-400',
+]
+
 function relativeTime(iso: string): string {
-  const then = new Date(iso).getTime()
-  const diffMs = Date.now() - then
+  const diffMs = Date.now() - new Date(iso).getTime()
   const days = Math.floor(diffMs / (1000 * 60 * 60 * 24))
   if (days < 1) return 'today'
   if (days < 7) return `${days}d ago`
@@ -65,9 +72,25 @@ export function GitHubTile() {
         </div>
       </div>
 
+      <div className="mt-4 overflow-x-auto">
+        <div className="flex gap-1">
+          {githubHeatmap.map((week, wi) => (
+            <div key={wi} className="flex flex-col gap-1">
+              {week.map((level, di) => (
+                <div
+                  key={di}
+                  className={`h-2.5 w-2.5 rounded-sm ${LEVEL_COLORS[level]}`}
+                  title={`${level === 0 ? 'No' : level} contribution${level === 1 ? '' : 's'}`}
+                />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <ul className="mt-4 divide-y divide-[var(--tile-border)]">
         {githubRepos.slice(0, 3).map((repo) => (
-          <li key={repo.fullName} className="py-3 first:pt-0">
+          <li key={repo.fullName} className="py-2.5 first:pt-0">
             <div className="flex items-baseline justify-between gap-2">
               <a
                 href={repo.url}
@@ -84,9 +107,9 @@ export function GitHubTile() {
               )}
             </div>
             {repo.description && (
-              <p className="mt-0.5 line-clamp-2 text-xs text-ink-muted">{repo.description}</p>
+              <p className="mt-0.5 line-clamp-1 text-xs text-ink-muted">{repo.description}</p>
             )}
-            <div className="mt-1.5 flex items-center gap-3 text-xs text-ink-muted">
+            <div className="mt-1 flex items-center gap-3 text-xs text-ink-muted">
               {repo.language && (
                 <span className="flex items-center gap-1.5">
                   <span className={`h-2 w-2 rounded-full ${LANG_DOT[repo.language] ?? 'bg-ink-muted'}`} />
