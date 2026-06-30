@@ -5,6 +5,7 @@ export type Project = {
   longDescription: string
   stack: string[]
   gradient: string
+  overlayColor?: string
   screenshot: string | null
   url?: string
   repo?: string
@@ -32,7 +33,8 @@ export const projects: Project[] = [
       'Landing site for the My Pokpok member app — points, rewards, and exclusive promos. Bilingual ID/EN, deep links into the Play Store and App Store, with a separate franchise inquiry CTA. Built for Script Alchemy\'s client Pok Pok.',
     stack: ['HTML', 'Tailwind', 'Bilingual'],
     gradient: 'from-amber-400 via-orange-400 to-red-400',
-    screenshot: '/projects/pokpok.jpg',
+    overlayColor: '180, 83, 9',
+    screenshot: 'https://i.imgur.com/UJUq8Og.jpeg',
     url: 'https://pokpok.cloud',
     year: 2026,
   },

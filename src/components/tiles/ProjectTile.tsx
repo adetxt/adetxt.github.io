@@ -26,8 +26,19 @@ export function ProjectTile({ project, className = '', onClick, layoutId }: Prop
               style={{ backgroundImage: `url(${project.screenshot})` }}
               aria-hidden="true"
             />
-            <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} mix-blend-multiply opacity-80`} aria-hidden="true" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" aria-hidden="true" />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: `linear-gradient(to right, ${
+                  project.overlayColor ? `rgba(${project.overlayColor}, 0.95)` : 'rgba(0, 0, 0, 0.85)'
+                } 0%, ${
+                  project.overlayColor ? `rgba(${project.overlayColor}, 0.7)` : 'rgba(0, 0, 0, 0.55)'
+                } 30%, ${
+                  project.overlayColor ? `rgba(${project.overlayColor}, 0.25)` : 'rgba(0, 0, 0, 0.2)'
+                } 60%, transparent 100%)`,
+              }}
+              aria-hidden="true"
+            />
           </>
         ) : (
           <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} aria-hidden="true" />
