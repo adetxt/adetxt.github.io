@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:smoke": "node scripts/smoke.mjs",
+    "sync:github": "node scripts/sync-github.mjs",
     "lint": "tsc -b"
   },
   "dependencies": {

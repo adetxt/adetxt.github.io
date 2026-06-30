@@ -5,8 +5,8 @@ export const heroDetail: Project = {
   title: 'About Ade',
   description: '',
   longDescription:
-    "I'm a software engineer based in Lagos. I work on real-time interfaces, developer tools, and the occasional side project in Rust. Before this, I shipped B2B SaaS at a Series A startup and shipped 20+ client sites at a digital agency. Outside of work I read, run, and make playlists that are too long.",
-  stack: ['TypeScript', 'React', 'Node.js', 'Rust'],
+    "I'm Ade Harnanda, a software engineer based in Sidoarjo, Indonesia. I work across the stack on payment systems, AI integrations, and real-time engines — currently at Delta HQ Singapore, where I built an internal Go backend framework, an AI SDK for support tooling, and integrated Stripe, Veritrans, Flywire, and Midtrans. Previously CRM and lead-routing at SEA's largest ed-tech, plus enterprise APIs in Laravel, Node, and C#.",
+  stack: ['TypeScript', 'Go', 'React', 'PHP'],
   gradient: 'from-pink-400 via-violet-400 to-cyan-400',
   screenshot: null,
   year: 2025,

@@ -9,27 +9,57 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    id: 'exp-1',
-    role: 'Senior Software Engineer',
-    company: 'Acme Co',
-    start: '2023',
+    id: 'exp-delta',
+    role: 'Software Engineer',
+    company: 'Delta HQ',
+    start: '2024',
     end: 'Present',
-    description: 'Lead frontend for a data-heavy dashboard used by 10k+ daily users.',
+    description:
+      'Built an internal Go backend framework, an AI SDK for support tooling, and integrated Stripe, Veritrans, Flywire, and Midtrans payment gateways across the EMS, Payments, and AI teams.',
   },
   {
-    id: 'exp-2',
+    id: 'exp-meda',
+    role: 'Software Engineer & Lead Backend',
+    company: 'Meda Technology',
+    start: '2023',
+    end: '2024',
+    description:
+      'Standardized backend architecture, shipped Bridgestone enterprise APIs, and integrated multi-brand biometric attendance machines (Revo, Hikvision, Dahua) via C# and Go adaptors.',
+  },
+  {
+    id: 'exp-ruangguru',
     role: 'Software Engineer',
-    company: 'Startup Inc',
+    company: 'Ruangguru',
     start: '2021',
     end: '2023',
-    description: 'Full-stack work on a B2B SaaS, from Postgres to React.',
+    description:
+      'Owned CRM and lead-routing at SEA\'s largest ed-tech; built a real-time assignment engine and an experimental OpenAI chatbot for agent-customer communications.',
   },
   {
-    id: 'exp-3',
-    role: 'Junior Developer',
-    company: 'Agency LLC',
-    start: '2019',
+    id: 'exp-sevima',
+    role: 'Fullstack Developer',
+    company: 'Sevima',
+    start: '2020',
     end: '2021',
-    description: 'Shipped 20+ client sites across React, Vue, and vanilla JS.',
+    description:
+      'Engineered Siakad Cloud (Academic Information System) and a Computer-Based Test platform on Lumen and React for academic institutions.',
+  },
+  {
+    id: 'exp-fittech',
+    role: 'Project Manager & Web Programmer',
+    company: 'CV. Fit Tech Inova Global',
+    start: '2019',
+    end: '2020',
+    description:
+      'Led a Laravel-based digital investment guidance platform and built a REST API for a real-time pediatric asthma monitoring app connecting doctors and patients.',
+  },
+  {
+    id: 'exp-scomptec',
+    role: 'Freelance Web Programmer & IT Instructor',
+    company: 'SCOMPTEC Education',
+    start: '2018',
+    end: '2019',
+    description:
+      'Full-stack Computer-Based Test System on Node.js, MongoDB, and Vue.js, plus classroom IT instruction.',
   },
 ]
