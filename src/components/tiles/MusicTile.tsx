@@ -1,9 +1,9 @@
 import { BentoTile } from '../bento/BentoTile'
 import { currentlyListening, currentlyReading } from '../../data/music'
 
-export function MusicTile() {
+export function MusicTile({ className = '' }: { className?: string }) {
   return (
-    <BentoTile data-bento-tile label="Currently enjoying" className="col-span-1 lg:col-span-4 p-6">
+    <BentoTile data-bento-tile label="Currently enjoying" className={`col-span-1 lg:col-span-4 p-6 ${className}`}>
       <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
         Vibes
       </p>

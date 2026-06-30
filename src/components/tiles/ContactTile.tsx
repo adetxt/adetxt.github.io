@@ -1,12 +1,12 @@
 import { BentoTile } from '../bento/BentoTile'
 import { socials } from '../../data/socials'
 
-export function ContactTile() {
+export function ContactTile({ className = '' }: { className?: string }) {
   return (
     <BentoTile
       data-bento-tile
       label="Get in touch"
-      className="col-span-1 !bg-[#0a0a0a] p-6 !text-white lg:col-span-4"
+      className={`col-span-1 !bg-[#0a0a0a] p-6 !text-white lg:col-span-4 ${className}`}
     >
       <p className="text-xs font-semibold uppercase tracking-wider text-white/60">
         Get in touch

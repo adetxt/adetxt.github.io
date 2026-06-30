@@ -1,5 +1,6 @@
 import { FiStar, FiExternalLink } from 'react-icons/fi'
 import { BentoTile } from '../bento/BentoTile'
+import { Collapsible } from '../ui/Collapsible'
 import { Counter } from '../ui/Counter'
 import { githubRepos, githubTotals, githubHeatmap } from '../../data/github'
 
@@ -33,9 +34,9 @@ function relativeTime(iso: string): string {
   return `${Math.floor(days / 365)}y ago`
 }
 
-export function GitHubTile() {
+export function GitHubTile({ className = '' }: { className?: string }) {
   return (
-    <BentoTile data-bento-tile label="GitHub activity" className="col-span-1 lg:col-span-5 p-6">
+    <BentoTile data-bento-tile label="GitHub activity" className={`col-span-1 lg:col-span-5 p-6 ${className}`}>
       <div className="flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-wider text-ink-muted">
           GitHub
@@ -72,55 +73,57 @@ export function GitHubTile() {
         </div>
       </div>
 
-      <div className="mt-4 overflow-x-auto">
-        <div className="flex gap-1">
-          {githubHeatmap.map((week, wi) => (
-            <div key={wi} className="flex flex-col gap-1">
-              {week.map((level, di) => (
-                <div
-                  key={di}
-                  className={`h-2.5 w-2.5 rounded-sm ${LEVEL_COLORS[level]}`}
-                  title={`${level === 0 ? 'No' : level} contribution${level === 1 ? '' : 's'}`}
-                />
-              ))}
-            </div>
-          ))}
+      <Collapsible className="mt-4" collapsedHeight={180}>
+        <div className="overflow-x-auto">
+          <div className="flex gap-1">
+            {githubHeatmap.map((week, wi) => (
+              <div key={wi} className="flex flex-col gap-1">
+                {week.map((level, di) => (
+                  <div
+                    key={di}
+                    className={`h-2.5 w-2.5 rounded-sm ${LEVEL_COLORS[level]}`}
+                    title={`${level === 0 ? 'No' : level} contribution${level === 1 ? '' : 's'}`}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <ul className="mt-4 divide-y divide-[var(--tile-border)]">
-        {githubRepos.slice(0, 3).map((repo) => (
-          <li key={repo.fullName} className="py-2.5 first:pt-0">
-            <div className="flex items-baseline justify-between gap-2">
-              <a
-                href={repo.url}
-                target="_blank"
-                rel="noreferrer"
-                className="truncate text-sm font-semibold text-ink transition-colors hover:underline"
-              >
-                {repo.name}
-              </a>
-              {repo.stars > 0 && (
-                <span className="flex shrink-0 items-center gap-0.5 text-xs text-ink-muted">
-                  <FiStar size={11} /> {repo.stars}
-                </span>
+        <ul className="mt-4 divide-y divide-[var(--tile-border)]">
+          {githubRepos.slice(0, 3).map((repo) => (
+            <li key={repo.fullName} className="py-2.5 first:pt-0">
+              <div className="flex items-baseline justify-between gap-2">
+                <a
+                  href={repo.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="truncate text-sm font-semibold text-ink transition-colors hover:underline"
+                >
+                  {repo.name}
+                </a>
+                {repo.stars > 0 && (
+                  <span className="flex shrink-0 items-center gap-0.5 text-xs text-ink-muted">
+                    <FiStar size={11} /> {repo.stars}
+                  </span>
+                )}
+              </div>
+              {repo.description && (
+                <p className="mt-0.5 line-clamp-1 text-xs text-ink-muted">{repo.description}</p>
               )}
-            </div>
-            {repo.description && (
-              <p className="mt-0.5 line-clamp-1 text-xs text-ink-muted">{repo.description}</p>
-            )}
-            <div className="mt-1 flex items-center gap-3 text-xs text-ink-muted">
-              {repo.language && (
-                <span className="flex items-center gap-1.5">
-                  <span className={`h-2 w-2 rounded-full ${LANG_DOT[repo.language] ?? 'bg-ink-muted'}`} />
-                  {repo.language}
-                </span>
-              )}
-              <span>updated {relativeTime(repo.updatedAt)}</span>
-            </div>
-          </li>
-        ))}
-      </ul>
+              <div className="mt-1 flex items-center gap-3 text-xs text-ink-muted">
+                {repo.language && (
+                  <span className="flex items-center gap-1.5">
+                    <span className={`h-2 w-2 rounded-full ${LANG_DOT[repo.language] ?? 'bg-ink-muted'}`} />
+                    {repo.language}
+                  </span>
+                )}
+                <span>updated {relativeTime(repo.updatedAt)}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Collapsible>
     </BentoTile>
   )
 }

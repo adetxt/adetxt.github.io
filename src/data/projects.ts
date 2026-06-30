@@ -34,7 +34,7 @@ export const projects: Project[] = [
     stack: ['HTML', 'Tailwind', 'Bilingual'],
     gradient: 'from-amber-400 via-orange-400 to-red-400',
     overlayColor: '180, 83, 9',
-    screenshot: 'https://i.imgur.com/UJUq8Og.jpeg',
+    screenshot: 'https://26f6077ad18597a0f3cd1b96fa24bf8d.r2.cloudflarestorage.com/sa-general/UJUq9Og.jpeg',
     url: 'https://pokpok.cloud',
     year: 2026,
   },

@@ -13,6 +13,7 @@ import { MusicTile } from './components/tiles/MusicTile'
 import { ContactTile } from './components/tiles/ContactTile'
 import { GitHubTile } from './components/tiles/GitHubTile'
 import { ExperienceTile } from './components/tiles/ExperienceTile'
+import { ClientWorkTile } from './components/tiles/ClientWorkTile'
 import { projects } from './data/projects'
 import { heroDetail } from './data/hero'
 import type { Project } from './data/projects'
@@ -33,11 +34,12 @@ export default function App() {
         <TechStackTile />
         <NowBuildingTile />
         <ProjectTile project={projects[1]} className="lg:col-span-7" onClick={() => setOpenDetail(projects[1])} />
-        <ExperienceTile />
-        <GitHubTile />
-        <MusicTile />
-        <ContactTile />
-        <ProjectTile project={projects[2]} className="lg:col-span-4" onClick={() => setOpenDetail(projects[2])} />
+        <ExperienceTile className="lg:self-start" />
+        <GitHubTile className="lg:self-start" />
+        <ClientWorkTile className="lg:self-start" />
+        <MusicTile className="lg:self-start" />
+        <ContactTile className="lg:self-start" />
+        <ProjectTile project={projects[2]} className="lg:col-span-4 lg:self-start" onClick={() => setOpenDetail(projects[2])} />
       </BentoGrid>
       <Marquee
         items={[
